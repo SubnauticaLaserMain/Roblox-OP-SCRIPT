@@ -168,6 +168,39 @@ if game.PlaceId == 17427651911 then
                     task.wait(0.1)
 
                     Humanoid.WalkSpeed = 16
+                elseif Quest.Value == 'Obby' then
+                    Humanoid.WalkSpeed = 0
+                    HumanoidRootPart.CFrame = CFrame.new(-140.96637, 288.42453, 331.041351, 0.417113602, 0.255825877, -0.872106254, 2.78804591e-10, 0.959566593, 0.281481713, 0.908854365, -0.117409855, 0.400248289)
+
+                    task.wait(1.5)
+
+                    HumanoidRootPart.CFrame = CFrame.new(-140.96637, 288.42453, 331.041351, 0.417113602, 0.255825877, -0.872106254, 2.78804591e-10, 0.959566593, 0.281481713, 0.908854365, -0.117409855, 0.400248289)
+
+                    task.wait(1.5)
+
+                    HumanoidRootPart.CFrame = CFrame.new(-208.893585, 308.55661, 103.556183, 0.989478111, -0.00822329801, 0.144448608, -7.23761329e-10, 0.998383462, 0.0568368621, -0.144682497, -0.0562388338, 0.987878621)
+
+                    task.wait(1.5)
+
+                    HumanoidRootPart.CFrame = CFrame.new(-109.653709, 341.148865, 103.220512, 0.941580176, 0.160246, -0.296222925, -6.36549968e-09, 0.879550576, 0.475805372, 0.336788952, -0.448008895, 0.828167379)
+
+                    task.wait(1.5)
+
+                    HumanoidRootPart.CFrame = CFrame.new(-108.96328, 343.424377, 20.8832264, -0.758345783, -0.115303598, 0.641573608, -7.39863637e-09, 0.984231353, 0.176886022, -0.651852489, 0.134140775, -0.74638772)
+
+                    task.wait(1.5)
+
+                    HumanoidRootPart.CFrame = CFrame.new(-13.7776165, 344.752716, 21.7951756, -0.828893304, -0.0167769846, 0.559155107, -3.68454778e-09, 0.999550164, 0.0299906656, -0.559406757, 0.0248590596, -0.828520417)
+
+                    task.wait(1.5)
+
+                    HumanoidRootPart.CFrame = CFrame.new(104.336014, 343.514618, 100.529449, 0.0404533297, 0.349198014, -0.936175346, 4.05234957e-09, 0.936942279, 0.349484086, 0.999181449, -0.0141377989, 0.0379024334)
+
+
+                    task.wait(0.5)
+
+
+                    Humanoid.WalkSpeed = 16
                 end
             end
         end
@@ -176,7 +209,36 @@ if game.PlaceId == 17427651911 then
 
     Quest = CompleteQuests.CreateDropdown({
         Name = 'Quest',
-        List = {'Mirror', 'Flag'},
+        List = {'Mirror', 'Flag', 'Obby'},
         Function = function(val) end
+    })
+
+
+-- 
+    local TP_Options = {Value = 'GoldPot'}
+
+    local TP = Blatant.CreateOptionsButton({
+        Name = 'TP',
+        Function = function(callback)
+            if callback then
+                local HumanoidRootPart = game:GetService('Players').LocalPlayer.Character:WaitForChild('HumanoidRootPart')
+
+
+                if TP_Options.Value == 'GoldPot' then
+                    HumanoidRootPart.CFrame = CFrame.new(79.153923, 595.79187, 512.2854, -0.873605728, -1.09014785e-07, -0.486634374, -9.61479927e-08, 1, -5.14130321e-08, 0.486634374, 1.87419791e-09, -0.873605728)
+                elseif TP_Options.Value == 'VIP_Room' then
+                    HumanoidRootPart.CFrame = CFrame.new(225.547287, 549.61969, 312.236237, 0.929435372, -0.132046297, 0.344548553, -4.87495777e-09, 0.933773875, 0.357863605, -0.368984997, -0.332611084, 0.867882431)
+                elseif TP_Options.Value == 'Ice_Room' then
+                    HumanoidRootPart.CFrame = CFrame.new(-10.2858124, 477.933197, 153.905945, 0.673626721, -0.328141451, 0.662231266, 5.43987611e-09, 0.896031082, 0.443991333, -0.739071727, -0.299084425, 0.603590488)
+                end
+            end
+        end
+    })
+
+
+    TP_Options = TP.CreateDropdown({
+        Name = 'Locations',
+        Function = function(val) end,
+        List = {'GoldPot', 'VIP_Room', 'Ice_Room'}
     })
 end
